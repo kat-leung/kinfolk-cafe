@@ -1,0 +1,171 @@
+<!-- This template is originally found on https://www.sitepoint.com/a-basic-html5-template/ -->
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- the title is what displays in the browsers title bar. Mandatory inside the <head> -->
+  <title>Kinfolk Cafe</title>
+
+  <!-- all meta elements are optional but have benefits for SEO and marketing -->
+  <meta name="description" content="website for Kinfolk Cafe in Vancouver BC Canada.">
+  <meta name="author" content="created by Kathy L from katdesigns.com">
+
+
+  <!-- for favicons and the last one is for the icon that's used on Apple devices with the page is added to the user's home screen -->
+  <link rel="icon" href="" type="">
+
+  <!-- for stylesheets and scripts -->
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Comfortaa:wght@300;400;700&family=Montserrat&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav-logo-left">
+            <img src="images/kinfolk-logo.png" alt="logo for kinfolk cafe">
+        </div>
+        <a href="#contact">contact</a>
+        <a href="#menu">menu</a>
+        <a href="#about">about</a>
+        
+    </div>
+
+    <div class="hero-image">
+        <img src="images/storefront-resized.png">
+       <div class="hero-text">
+            <h1>come as you are</h1>
+       </div> 
+    </div>
+
+    <div class="content">
+        <div id="about">
+            <img src="images/welcome.png" style="float: left; margin: 0 2em;">
+            <h1 class="gold-heading">welcome</h1>
+            <p>Kinfolk believes that small actions can have a huge impact on individuals, people, the community, and the world. We do right and lead the community by putting people and the earth first. We aim to provide products and quality to serve the needs of its diverse clients.</p>
+        </div>
+
+        <div id="menu" class="menu-section">
+        <h1 class="blue-heading">menu</h1> 
+        
+            <div class="menu-items">
+                <button class="buttonlink" onclick="viewMenu(event, 'drinks')"> drinks </button>
+                        
+                <button class="buttonlink" onclick="viewMenu(event, 'food')"> food </button>
+                            
+                <button class="buttonlink" onclick="viewMenu(event, 'seasonal')"> seasonal </button>
+            </div>
+
+        <div class="menu"> 
+            <div id="drinks" class="menu-item">
+                <div class="row">
+                    <div class="column">
+                        <h2>coffee</h2>
+                        <p><span class="left">drip coffee</span><span class="right"> 3 </span></p>
+                        <p><span class="left">americano</span> <span class="right"> 3.5 </span></p>
+                        <p><span class="left">cappucino</span><span class="right"> 4.25 </span></p>
+                        <p><span class="left">latte</span><span class="right"> 3.5 </span></p>
+                        <p><span class="left">espresso</span><span class="right"> 3 </span></p>
+                    </div>
+
+                    <div class="column">
+                        <h2>tea</h2>
+                        <p><span class="left">chai latte</span><span class="right"> 3 </span></p>
+                        <p><span class="left">steeped tea</span><span class="right"> 3.5 </span></p>
+                        <p><span class="left">matcha</span><span class="right"> 5 </span></p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <h2>other</h2>
+                        <p><span class="left">kombucha</span><span class="right"> 5 </span></p>
+                        <p><span class="left">house lemonade</span><span class="right"> 3.5 </span></p>
+                        <p><span class="left">hot chocolate</span><span class="right"> 3 </span></p>
+                        <p><span class="left">italian soda</span><span class="right"> 4.5 </span></p>
+                    </div>
+
+                    <div class="column">
+                        <img src="images/iced-coffee.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div id="food" class="menu-item" style="display:none">
+                
+                
+                    <div class="column">
+                        <img src="images/pastries.jpg">
+                    </div>
+
+
+                        <div class="column">
+                            <h2>pastries</h2>
+                            <p>butter croissant</p>
+                            <p>pain au chocolate</p>
+                            <p>cinnamon scroll</p>
+                            <p>scone</p>
+                            <p>muffin</p>
+                        </div>
+                    
+                        <div class="column">
+                            <h2>sandwiches</h2>
+                            <p>soppressata</p>
+                            <p>caprese</p>
+                            <p>roast beef</p>
+                        </div>
+                
+                </div> 
+
+                <h2>hot meals</h2>
+                <p>soup of the day</p>
+                <p>quiche lorraine</p>
+                <p>pot pie</p>
+                <p>spaghetti carbonara</p>
+                <p>beef bourguinon</p>
+                <p>ravioli</p>
+            </div>
+
+            <div id="seasonal" class="menu-item" style="display:none">
+                <h2>Seasonal</h2>
+                <p>this summer we are introducing two new summer drinks and a sweet treat to get you through this busy summer season. </p>
+                <p>available now until September 15</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+<script>
+    function viewMenu(evt, menuOption) {
+	var x ,y;
+	
+    x = document.getElementsByClassName("menu-item");	
+	for (let i = 0; i < x.length; i++) {
+    		x[i].style.display = "none";  
+    }
+
+    y = document.getElementsByClassName("buttonlink");
+    for (let i=0; i < y.length; i++) {
+        y[i].className = y[i].className.replace(" active", "");
+    }
+
+  document.getElementById(menuOption).style.display = "flex";
+  evt.currentTarget.className += " active";
+
+}
+
+    
+</script>
+
+
+</body>
+</html>
